@@ -2,14 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Ορισμός της δομής person
 struct person {
     char *fname; // Όνομα
     char *lname; // Επώνυμο
     char *mname; // Πατρώνυμο
 };
 
-// Συνάρτηση που αρχικοποιεί ένα άτομο
 struct person *person_init(char *firstname, char *lastname, char *middlename) {
     struct person *p = (struct person *)malloc(sizeof(struct person));
     if (p == NULL) {
@@ -22,7 +20,6 @@ struct person *person_init(char *firstname, char *lastname, char *middlename) {
     return p;
 }
 
-// Συνάρτηση που δημιουργεί τα στοιχεία ενός παιδιού
 struct person *childof(struct person father, char *newname) {
     struct person *child = (struct person *)malloc(sizeof(struct person));
     if (child == NULL) {
@@ -35,7 +32,6 @@ struct person *childof(struct person father, char *newname) {
     return child;
 }
 
-// Παράδειγμα χρήσης
 int main() {
     // Δημιουργία του πατέρα
     struct person *father = person_init("George", "Smith", "Michael");
